@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Reports</title>
+
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+
+    <style>
+        /* Reports section */
+        .reports {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .report-card {
+            background-color: #f5f5f5;
+            margin: 15px auto;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 500px;
+            text-align: left;
+        }
+
+        /* Status colors */
+        .submitted {
+            border-left: 6px solid orange;
+        }
+
+        .progress {
+            border-left: 6px solid blue;
+        }
+
+        .resolved {
+            border-left: 6px solid green;
+        }
+
+        .report-card h4 {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="{% static 'main/logo.png' %}" alt="Logo">
+    <h1>My Service Website</h1>
+
+    <form action="#" method="get" class="search-form">
+        <input type="text" name="q" placeholder="Search..." class="search-input">
+        <button type="submit" class="search-btn">Search</button>
+    </form>
+</header>
+
+<nav>
+    <a href="{% url 'home' %}">Home</a> |
+    <a href="{% url 'report' %}">Report Issue</a> |
+    <a href="{% url 'view_reports' %}">View Reports</a> |
+    <a href="#">Contact</a> |
+    <a href="{% url 'feedback_home' %}">Feedback</a>
+</nav>
+
+<hr>
+
+<section class="reports">
+    <h2>Submitted Reports</h2>
+
+    <!-- Report 1 -->
+    <article class="report-card submitted">
+        <h4>Water Leak</h4>
+        <p>Status: Submitted</p>
+        <p>Location: Block A</p>
+    </article>
+
+    <!-- Report 2 -->
+    <article class="report-card progress">
+        <h4>Pothole</h4>
+        <p>Status: In Progress</p>
+        <p>Location: Main Road</p>
+    </article>
+
+    <!-- Report 3 -->
+    <article class="report-card resolved">
+        <h4>Street Light Issue</h4>
+        <p>Status: Resolved</p>
+        <p>Location: Zone 3</p>
+    </article>
+
+</section>
+
+<section class="contact">
+    <h3>Contact Us</h3>
+    <p>Email: info@municipality.gov</p>
+    <p>Phone: +27 12 345 6789</p>
+</section>
+
+<footer>
+    <p>© 2026 Municipality System</p>
+</footer>
+
+</body>
+</html>

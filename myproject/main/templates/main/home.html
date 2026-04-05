@@ -1,0 +1,360 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Wireframe</title>
+<style>
+    /* Reset defaults */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    /* Header */
+    h1 {
+        text-align: 0;
+    background-color: #fdfffd;
+        color: rgb(12, 12, 12);
+        padding: 25px 10px;
+        font-size: 0.9rem;
+        
+    }
+
+    header {
+    background-color: #fdfffd;
+    color: white;
+    display: flex;              /* Align items horizontally */
+    align-items: center;        /* Vertically center logo and title */
+    justify-content: flex-start;    /* Center content in header */
+    gap: 0px;                  /* Space between logo and title */
+    padding: 15px 10px;
+      height: 50px;
+}
+
+    /* Navigation */
+   nav {
+            background-color: #499e2f;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+   nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        header img {
+            height: 50px; /* Logo height */
+            width: auto;
+        }
+
+    /* Horizontal line */
+    hr {
+        border: 0;
+        height: 2px;
+        background-color: #4CAF50;
+        margin: 0 20px 20px 20px;
+    }
+
+    /* Main content */
+    h2 {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+    }
+
+    p {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 30px auto;
+        font-size: 0.9rem;
+    }
+
+    .contact {
+    background-color: #eaeaea;
+    padding: 10px;
+    text-align: left;
+}
+
+.contact h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact p {
+    margin:  0;
+    font-size: 0.95rem;
+     text-align:left;
+}
+
+    /* Footer */
+   footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #499e2f;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+}
+.landing-image {
+    width: 100%;
+    max-height: 400px;     /* keeps full image */
+    display: block;
+    object-fit: contain;
+}
+
+.hero {
+    position: relative;       /* needed for overlay */
+    text-align: center;
+    color: white;
+}
+
+/* Image */
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Text on image */
+.hero h2 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+
+.hero p {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Button */
+.hero-btn {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-btn:hover {
+    background-color: #2e7d32;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+.hero h2, .hero p, .hero-btn {
+    z-index: 1;
+}
+.about {
+    padding: 20px;
+    text-align: center;
+}
+
+/* About section */
+.about {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.about h3 {
+    margin-bottom: 10px;
+}
+
+.about p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Links section */
+.links {
+    text-align: center;
+    padding: 20px;
+}
+
+.links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.links a:hover {
+    background-color: #2e7d32;
+}
+
+    /* Responsive */
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 1.5rem;
+            padding: 20px 10px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        nav {
+            font-size: 0.9rem;
+        }
+        .search-form {
+    display: flex;
+    align-items: center;
+   
+    
+}
+
+.search-input {
+    flex: 1;
+        width: 70%;
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    outline: none;
+}
+
+.search-btn {
+    
+    border: none;
+    background-color: #2e7d32;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #1b5e20;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .search-form {
+        width: 100%;
+    }
+    .search-input {
+        flex: 1;
+        width: 70%;
+        font-size: 0.9rem;
+    }
+    .search-btn {
+         padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+    }
+</style>
+
+</head>
+<body>
+<header>
+    <img src="{% static 'main/logo HCI.jpg' %}" alt="Logo">
+    <h1>E-municipality</h1>
+
+     <form action="#" method="get" class="search-form">
+        <input type="text" name="q" placeholder="Search..." class="search-input">
+        <button type="submit" class="search-btn">Search</button>
+    </form>
+   
+</header>
+
+<nav>
+    <a href="{% url 'home' %}">Home</a> |
+    <a href="{% url 'report' %}">Report Issue</a> |
+    <a href="{% url 'viewreport' %}">View Reports</a> |
+    <a href="{% url 'feedback_home' %}">Announcements</a>|
+    <a href="#">Contact</a>
+</nav>
+
+
+
+<section class="hero">
+    
+<img src="{% static 'main/landing.webp' %}" alt="Landing Image" class="landing-image">
+
+    <h2>Welcome to Our Municipality System</h2>
+    <p>Report issues, stay informed, and connect with your community.</p>
+    <a href="#" class="hero-btn">Read More</a>
+</section>
+<hr >
+<section class="about">
+    <h3>About Us</h3>
+    <p>This platform allows residents to report service delivery issues, track reports, and provide feedback to the municipality.</p>
+</section>
+  
+<section class="links">
+    
+    <a href="#">Tenders</a><br>
+    <a href="#">Latest News</a><br>
+    <a href="#">Services</a><br>
+    <a href="#">Announcements</a>
+</section>
+    
+
+<section class="contact">
+    <h3>Contact Us</h3>
+    <p>Email: info@municipality.gov<br>
+    Phone: +27 12 345 6789<br>
+    Address: 123 Main Street, Pretoria</p>
+</section>
+
+
+<footer>
+    © 2026 Municipality System
+</footer>
+   
+<body>
+
+</body>
+</html>
+
+</body>
+</html>
